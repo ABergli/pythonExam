@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+  <h2>Register</h2>
+  <form method="post" action="{% url 'blog:register' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    {% if form.errors %}
+        <p style="color: red;">Please correct the errors below.</p>
+    {% endif %}
+    <button type="submit">Register</button>
+  </form>
+  {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

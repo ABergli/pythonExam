@@ -1,0 +1,170 @@
+/* Reset styles */
+body, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Post styles */
+.post-item {
+    margin-bottom: 40px;
+}
+
+.post-image,
+.post-video {
+    max-width: 50%;
+    height: auto;
+}
+
+.post-image {
+    max-height: 200px;
+}
+
+.post-video {
+    max-height: 300px;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 36px;
+    margin: 0;
+}
+
+/* Navigation styles */
+ul {
+    list-style: none;
+}
+
+nav {
+    background-color: #444;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Article styles */
+article {
+    margin-top: 20px;
+}
+
+article h2 {
+    font-size: 24px;
+}
+
+article p {
+    line-height: 1.5;
+}
+
+/* Link styles */
+a {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Media styles */
+img,
+video {
+    max-width: 40%;
+    height: auto;
+    width: 40%;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px;
+    }
+    
+    nav a {
+        margin: 0 10px;
+    }
+}
+
+/* form.css */
+
+/* Form container styling */
+.form-container {
+    width: 60%; 
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Label styling */
+form label {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Style for form input fields */
+form input[type="text"],
+form input[type="file"],
+form textarea {
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style for the submit button */
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Hover effect for the submit button */
+form button:hover {
+    background-color: #45a049;
+}

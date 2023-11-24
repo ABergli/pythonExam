@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}{{ blog_post.title }}{% endblock %}
+
+{% block content %}
+    <h1>{{ blog_post.title }}</h1>
+    <p>Author: {{ blog_post.author }}</p>
+    <p>Created On: {{ blog_post.created_on }}</p>
+    <p>Updated On: {{ blog_post.updated_on }}</p>
+    <p>{{ blog_post.content }}</p>
+
+    {% if blog_post.image %}
+        <img src="{{ blog_post.image.url }}" alt="Post Image">
+    {% endif %}
+
+    {% if blog_post.video %}
+        <video controls>
+            <source src="{{ blog_post.video.url }}" type="video/mp4">
+        </video>
+    {% endif %}
+
+    <a href="{% url 'blog:home' %}">Back to Home</a>
+{% endblock %}

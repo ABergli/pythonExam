@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Welcome to the Cat Blog{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Welcome to the Cat Blog</h1>
+
+        {% if user.is_authenticated %}
+        <p><h2><a href="{% url 'blog:blog_post_create' %}">Create a New Post</a></h2></p>
+    </br></br>
+        <ul class="post-list">
+            {% for post in blog_posts %}
+                <li class="post-item">
+                    <h1>{{ post.title }}</h1>
+                    <a href="{% url 'blog:blog_post_edit' pk=post.pk %}">Edit</a>
+                    <a href="{% url 'blog:blog_post_delete' pk=post.pk %}">Delete</a>
+                    <p>Author: {{ post.author }}</p>
+                    <p>Published on: {{ post.created_on }}</p>
+                    <p>{{ post.content }}</p>
+                    
+
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="Post Image" class="post-image">
+                    {% endif %}
+
+                    {% if post.video %}
+                        <video controls class="post-video">
+                            <source src="{{ post.video.url }}" type="video/mp4">
+                        </video>
+                    {% endif %}
+                    
+                </li>
+            {% endfor %}
+        </ul>
+        {% else %}
+        <p>You are not logged in. Please log in or register.</p>
+    <ul>
+      <li><a href="{% url 'blog:login' %}">Login</a></li>
+      <li><a href="{% url 'blog:register' %}">Register</a></li>
+    </ul>
+  {% endif %}
+    </div>
+{% endblock %}
